@@ -1,0 +1,12 @@
+name: Publication proof CI
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+permissions:
+  contents: read
+jobs:
+  observe:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Record publication event
+        run: printf 'The pull request publication triggered CI.\n'
